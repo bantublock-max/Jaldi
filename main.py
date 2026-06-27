@@ -8,9 +8,9 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Messa
 from html import escape
 
 # ========== APNA TOKEN AUR OWNER ID YAHAN DAALO ==========
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
-OWNER_ID = int(os.environ.get("OWNER_ID", "1234567890"))
-# =======================================================
+BOT_TOKEN = "8966663581:AAHqxmlM7C2Hkwz8e8JCR14tWfNAaXnhTOk"
+OWNER_ID = 8211620138
+# =========================================================
 
 generated_keys = {}
 active_users = {}
@@ -18,10 +18,10 @@ approved_groups = set()
 bot_disabled_groups = set()
 
 # ========== ALAG MAX TIME & COOLDOWN ==========
-GROUP_MAX_TIME = 180      # Group max time
-DM_MAX_TIME = 300         # DM max time
-GROUP_COOLDOWN = 0        # Group cooldown (seconds)
-DM_COOLDOWN = 0           # DM cooldown (seconds)
+GROUP_MAX_TIME = 180
+DM_MAX_TIME = 300
+GROUP_COOLDOWN = 0
+DM_COOLDOWN = 0
 
 attack_logs = []
 active_attacks = {}
@@ -482,7 +482,6 @@ async def fa_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     if duration > max_time:
         location_name = "Group" if src == "group" else "DM"
-        await update.message.reply_text(f"❌ **MAX TIME EXCEEDED!**\n📍 {location_name} max: <code>{max_time}s</code>", parse_mod
         await update.message.reply_text(f"❌ **MAX TIME EXCEEDED!**\n📍 {location_name} max: <code>{max_time}s</code>", parse_mode="HTML")
         return
     if duration < 1:
